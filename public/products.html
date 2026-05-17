@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uly Dala Coffee · Menu</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('uly_dala_token')) {
+            document.documentElement.classList.add('auth-pending');
+          }
+        } catch (error) {}
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/pages/products.css" />
+  </head>
+  <body>
+    <div class="page">
+      <div class="ornament-bar" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="top-nav nav-modern">
+        <div class="nav-shell">
+          <a class="brand brand--link" href="/">
+            <span class="brand-title">Uly Dala Coffee</span>
+            <span class="brand-subtitle">Kazakh Steppe Coffee Platform</span>
+          </a>
+          <div class="nav-links nav-links--pill">
+            <a class="nav-link" href="/"><svg class="nav-link__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M946.5 505L560.1 118.8l-25.9-25.9a31.5 31.5 0 0 0-44.4 0L77.5 505a63.9 63.9 0 0 0-18.8 46c.4 35.2 29.7 63.3 64.9 63.3h42.5V940h691.8V614.3h43.4c17.1 0 33.2-6.7 45.3-18.8a63.6 63.6 0 0 0 18.7-45.3c0-17-6.7-33.1-18.8-45.2zM568 868H456V664h112v204zm217.9-325.7V868H632V640c0-22.1-17.9-40-40-40H432c-22.1 0-40 17.9-40 40v228H238.1V542.3h-96l370-369.7 23.1 23.1L882 542.3h-96.1z"></path></svg><span>Home</span></a>
+            <a class="nav-link" href="/auth.html" data-auth="guest">Sign in</a>
+            <a class="nav-link is-active" href="/products.html"><svg class="nav-link__icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M8 2h8"></path><path d="M12 2v6"></path><path d="M5 8h14"></path><path d="M6 8l3 12"></path><path d="M18 8l-3 12"></path></svg><span>Menu</span></a>
+            <a class="nav-link" href="/checkout.html"><svg class="nav-link__icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg><span>Cart</span></a>
+            <a class="nav-link" href="/account.html"><svg class="nav-link__icon" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.5a5.5 5.5 0 0 1 3.096 10.047 9.005 9.005 0 0 1 5.9 8.181.75.75 0 1 1-1.499.044 7.5 7.5 0 0 0-14.993 0 .75.75 0 0 1-1.5-.045 9.005 9.005 0 0 1 5.9-8.18A5.5 5.5 0 0 1 12 2.5ZM8 8a4 4 0 1 0 8 0 4 4 0 0 0-8 0Z"></path></svg><span>Account</span></a>
+            <a class="nav-link" href="/admin.html" data-auth="admin">Admin</a>
+            <a class="nav-link" href="/barista.html" data-auth="barista"><svg class="nav-link__icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M17 8h1a4 4 0 1 1 0 8h-1"></path><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg><span>Barista</span></a>
+
+            <a class="nav-link" href="/dashboard.html"><svg class="nav-link__icon" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg><span>Orders</span></a>
+          </div>
+          <div class="nav-actions">
+
+            <div class="user-badge">
+              <p id="currentUser">Not signed in</p>
+              <p id="currentRole">Role: guest</p>
+            </div>
+            <div class="nav-buttons">
+              <button class="ghost" id="refreshOrders">Refresh Orders</button>
+              <button class="btn-logout" id="logoutBtn" type="button" aria-label="Log out">
+                <span class="btn-logout__icon" aria-hidden="true">
+                  <svg viewBox="0 0 512 512">
+                    <path
+                      d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"
+                    ></path>
+                  </svg>
+                </span>
+                <span class="btn-logout__text">Logout</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <main class="main">
+        <section class="panel is-active products-panel">
+          <div class="panel-header">
+            <h2>Menu Board</h2>
+            <p>Pick your drinks, then head to checkout when you are ready.</p>
+          </div>
+          <div class="menu-split menu-board">
+            <section class="menu-card" data-view="all">
+              <div class="panel-header">
+                <h2>Menu Categories</h2>
+                <p>Switch between all items, drinks, and desserts.</p>
+              </div>
+
+              <div class="menu-tabs" role="tablist" aria-label="Menu category tabs">
+                <input type="radio" id="menu-tab-all" name="menu-tabs" value="all" checked />
+                <label class="tab" for="menu-tab-all">
+                  All
+                  <span class="notification" id="tabAllCount">0</span>
+                </label>
+
+                <input type="radio" id="menu-tab-drinks" name="menu-tabs" value="drinks" />
+                <label class="tab" for="menu-tab-drinks">
+                  Drinks
+                  <span class="notification" id="tabDrinksCount">0</span>
+                </label>
+
+                <input type="radio" id="menu-tab-desserts" name="menu-tabs" value="desserts" />
+                <label class="tab" for="menu-tab-desserts">
+                  Desserts
+                  <span class="notification" id="tabDessertsCount">0</span>
+                </label>
+
+                <span class="glider" aria-hidden="true"></span>
+              </div>
+
+              <div class="catalog-group catalog-group--drinks">
+                <div class="catalog-header">
+                  <h3>Drinks</h3>
+                  <p>Espresso, tea, and seasonal pours.</p>
+                </div>
+                <div id="drinksList" class="product-grid"></div>
+              </div>
+
+              <div class="catalog-group catalog-group--desserts">
+                <div class="catalog-header seasonal-header">
+                  <h3>Desserts</h3>
+                  <p>Pastries and sweet bites.</p>
+                </div>
+                <div id="dessertsList" class="product-grid"></div>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <section class="footer-banner">
+          <div class="footer-banner__content">
+            <p class="footer-kicker">Uly Dala Coffee</p>
+            <h3>From the Great Steppe to your cup</h3>
+            <p>Fresh roasts, tea blends, and quick pickup with live order tracking.</p>
+          </div>
+          <div class="footer-banner__actions">
+            <a href="/products.html" class="primary">Order menu</a>
+            <a href="/auth.html#registerCard" class="ghost">Create account</a>
+          </div>
+        </section>
+
+        <div class="footer-grid">
+          <section class="footer-column">
+            <h4>Visit us</h4>
+            <p>Mangilik El Ave 55, Astana</p>
+            <p>Mon-Fri: 08:00 - 21:00</p>
+            <p>Sat-Sun: 09:00 - 22:00</p>
+          </section>
+
+          <section class="footer-column">
+            <h4>Quick links</h4>
+            <a href="/products.html">Menu</a>
+            <a href="/checkout.html">Cart</a>
+            <a href="/dashboard.html">Orders</a>
+          </section>
+
+          <section class="footer-column">
+            <h4>Account</h4>
+            <a href="/auth.html">Sign in</a>
+            <a href="/account.html">Profile settings</a>
+          </section>
+
+          <section class="footer-column">
+            <h4>Support</h4>
+            <a href="mailto:rakhman@commedeschamps.dev">rakhman@commedeschamps.dev</a>
+            <a href="tel:+77771234567">+7 777 123 45 67</a>
+            <a href="/">Home</a>
+          </section>
+        </div>
+
+        <div class="footer-meta">
+          <p>© 2026 Uly Dala Coffee. Crafted on the steppe.</p>
+          <a href="#">Back to top</a>
+        </div>
+      </footer>
+
+    </div>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

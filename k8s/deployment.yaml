@@ -1,0 +1,84 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uly-dala-coffee
+  labels:
+    app: uly-dala-coffee
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uly-dala-coffee
+  template:
+    metadata:
+      labels:
+        app: uly-dala-coffee
+    spec:
+      containers:
+      - name: uly-dala-coffee
+        image: uly-dala-coffee:latest
+        imagePullPolicy: Never
+        ports:
+        - containerPort: 4000
+        env:
+        - name: PORT
+          value: "4000"
+        - name: MONGODB_URI
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: mongodb-uri
+        - name: JWT_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: app-secrets
+              key: jwt-secret
+        - name: JWT_EXPIRES_IN
+          value: "7d"
+        - name: APP_URL
+          value: "http://localhost:4000"
+        - name: PASSWORD_RESET_EXPIRES_MINUTES
+          value: "15"
+        - name: SMTP_HOST
+          value: "smtp.zoho.com"
+        - name: SMTP_PORT
+          value: "587"
+        - name: SMTP_SECURE
+          value: "false"
+        - name: SMTP_USER
+          value: "test@test.com"
+        - name: SMTP_PASS
+          value: "test"
+        - name: SMTP_FROM
+          value: "Uly Dala Coffee <test@test.com>"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "300m"
+            memory: "256Mi"
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 4000
+          initialDelaySeconds: 15
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: uly-dala-coffee-service
+spec:
+  selector:
+    app: uly-dala-coffee
+  ports:
+  - port: 4000
+    targetPort: 4000
+  type: ClusterIP
