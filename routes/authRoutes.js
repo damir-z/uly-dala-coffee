@@ -11,7 +11,7 @@ const {
   loginSchema,
   forgotPasswordSchema,
   resetPasswordSchema,
-} = require('../validators/authValidators');
+} = requireцц('../validators/authValidators');
 
 const router = express.Router();
 
